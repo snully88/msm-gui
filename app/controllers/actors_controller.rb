@@ -1,4 +1,16 @@
 class ActorsController < ApplicationController
+  def update
+    a_id = params.fetch("the_id")
+    matching_records = Actor.where({ :id => m_id})
+    the_actor = matching.records.at(0)
+
+    the_actor.name = params.fetch("the_name")
+    the_actor.dob = params.fetch("the_dob")
+    the_actor.bio = params.fetch("the_bio")
+    the_actor.image = params.fetch("the_image")
+  end
+
+  
   def destroy
     the_id = params.fetch("an_id")
     matching_records = Actor.where({ :id => the_id })
